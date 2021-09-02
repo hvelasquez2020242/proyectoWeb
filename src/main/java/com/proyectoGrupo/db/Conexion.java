@@ -21,7 +21,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 
 public class Conexion {
 
-    private static final String BD = "control_estudiantes";
+    private static final String BD = "control_academico";
     private static final String HOST = "localhost";
     private static final String PORT = "3306";
     private static final String USER = "root";
