@@ -1,3 +1,4 @@
+USE control_academico;
 -- -----------------------------------------------------
 -- Table alumno
 -- -----------------------------------------------------
@@ -52,6 +53,12 @@ insert into Salon (capacidad, descripcion, nombre_salon)
 values(175 ,"descripcion del salon inventada ","SL02");
 insert into Salon (capacidad, descripcion, nombre_salon) 	
 values(180 ,"descripcion del salon inventada ","SL03");
+insert into Salon (capacidad, descripcion, nombre_salon) 	
+values(200 ,"descripcion del salon inventada ","SL04");
+insert into Salon (capacidad, descripcion, nombre_salon) 	
+values(175 ,"descripcion del salon inventada ","SL05");
+insert into Salon (capacidad, descripcion, nombre_salon) 	
+values(180 ,"descripcion del salon inventada ","SL06");
 
 -- -----------------------------------------------------
 -- Table Curso
@@ -88,3 +95,5 @@ select * from Curso;
 select * from Asignacion_alumno;
 
 select salon_id, capacidad,descripcion,nombre_salon from Salon;
+
+delete from Salon where salon_id = 6;
