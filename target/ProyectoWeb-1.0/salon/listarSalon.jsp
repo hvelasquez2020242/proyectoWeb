@@ -28,12 +28,12 @@
             </div>
         </header>
 
-
+        <jsp:include page="../WEB-INF/paginas/comunes/cabecera.jsp"/>
 
         <section id="estudiantes">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-md-9">
+                    <div class="col-xs-12 col-md-12">
 
 
                         <div class="card">
@@ -42,7 +42,7 @@
                             </div>
                         </div>
 
-                        <table class="table table-striped">
+                        <table class="table table-striped  ">
                             <thead class="table-dark">
                                 <tr>
                                     <th>#</th>
@@ -60,7 +60,7 @@
                                         <td>${salon.descripcion}</td>
                                         <td>${salon.capacidad}</td>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/ServletSalon?accion=eliminar&idsalon=${salon.idSalon}">Eliminar</a>
+                                            <a href="${pageContext.request.contextPath}/ServletSalon?accion=eliminar&idsalon=${salon.idSalon}" class="link-info">Eliminar</a>
 
                                         </td> 
                                     </tr>
@@ -68,17 +68,17 @@
                             </tbody>
                         </table>    
                     </div>
-                    
-                        
-                    </div>
+
+
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
 
 
-        <script src="../assets/js/jquery-3.6.0.js"></script>
-        <script src="../assets/js/bootstrap.bundle.js"></script>
-    </body>
+    <script src="../assets/js/jquery-3.6.0.js"></script>
+    <script src="../assets/js/bootstrap.bundle.js"></script>
+</body>
 </html>  

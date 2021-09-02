@@ -25,6 +25,7 @@
                     </div>
                 </div>
             </div>
+            <jsp:include page="../WEB-INF/paginas/comunes/cabecera.jsp"/>
             <section id="estudiantes">
                 <div class="container">
                     <div class="row">

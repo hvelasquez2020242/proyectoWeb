@@ -56,7 +56,7 @@ public class ServletSalon extends HttpServlet {
 
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoSalones", listaSalon);
-        response.sendRedirect("Salon/listarSalon.jsp");
+        response.sendRedirect("salon/listarSalon.jsp");
 
     }
     
