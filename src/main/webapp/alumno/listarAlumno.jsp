@@ -14,7 +14,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- boostrap CSS -->
         <link rel="stylesheet" href="../assets/css/bootstrap.css">
-        <title>Listado de Alumno</title>
+
+        <title>Listado de Salones</title>
     </head>
     <body>
         <header id="main-header" class="py-2 bg-light pt-4">
@@ -27,6 +28,7 @@
             </div>
         </header>
         <jsp:include page="../WEB-INF/paginas/comunes/cabecera.jsp"/>
+
         <section id="estudiantes">
             <div class="container">
                 <div class="row">
@@ -70,8 +72,7 @@
     </section>
 
 
-    <script src="../assets/js/jquery-3.6.0.js"></script> 
-    <script src="../assets/js/bootstrap.bundle.js"></script>
-</body>
+        <script src="../assets/js/jquery-3.6.0.js"></script> 
+        <script src="../assets/js/bootstrap.bundle.js"></script>
+    </body>
 </html>
-

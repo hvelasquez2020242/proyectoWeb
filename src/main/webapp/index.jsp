@@ -1,12 +1,7 @@
 <%-- 
     Document   : index
-<<<<<<< HEAD
     Created on : 01-sep-2021, 11:38:24
     Author     : Hugo Daniel Velasquez Patzan
-=======
-    Created on : 1/09/2021, 10:57:31 PM
-    Author     : IVAN PC
->>>>>>> cc3ac25e090acec462cbb0fc14283259921bb458
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -27,9 +22,9 @@
         <a href="${pageContext.request.contextPath}/ServletSalon?accion=listar"">Listar Salon</a>
         <br>
         <a href="${pageContext.request.contextPath}/ServletAlumno?accion=listar">Listar Alumnos</a>
-
-
-
+        
+        
+        
         <script src="./assets/js/jquery-3.6.0.js"></script>
         <script src="./assets/js/bootstrap.bundle.js"></script>
     </body>
