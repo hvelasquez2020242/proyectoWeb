@@ -1,0 +1,3 @@
+public class carrera_tecnica {
+	private String nombre
+	private Setrin seccion
