@@ -26,6 +26,9 @@ public class Alumno {
         this.carne = carne;
     }
 
+    
+    
+
     public Alumno(String apellidos, String nombres, String email) {
         this.apellidos = apellidos;
         this.nombres = nombres;

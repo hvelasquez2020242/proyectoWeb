@@ -17,6 +17,7 @@ import java.util.List;
 public interface IAlumnoDao {
 
     public List<Alumno> listar();
+<<<<<<< HEAD
 
     public Alumno encontrar(Alumno alumno);
 
@@ -24,6 +25,11 @@ public interface IAlumnoDao {
 
     public int actualizar(Alumno alumno);
 
+=======
+    public Alumno encontrar(Alumno alumno);
+    public int insertar(Alumno alumno);
+    public int actualizar(Alumno alumno);
+>>>>>>> cc3ac25e090acec462cbb0fc14283259921bb458
     public int eliminar(Alumno alumno);
 
 }

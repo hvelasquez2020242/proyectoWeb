@@ -26,6 +26,12 @@ public class Alumno {
         this.carne = carne;
     }
 
+<<<<<<< HEAD
+=======
+    
+    
+
+>>>>>>> cc3ac25e090acec462cbb0fc14283259921bb458
     public Alumno(String apellidos, String nombres, String email) {
         this.apellidos = apellidos;
         this.nombres = nombres;

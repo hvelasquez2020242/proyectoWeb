@@ -17,13 +17,9 @@ import java.util.List;
 public interface IAlumnoDao {
 
     public List<Alumno> listar();
-
     public Alumno encontrar(Alumno alumno);
-
     public int insertar(Alumno alumno);
-
     public int actualizar(Alumno alumno);
-
     public int eliminar(Alumno alumno);
 
 }
