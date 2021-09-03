@@ -14,7 +14,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<<<<<<< HEAD
         <title>Inicio</title>
         <link rel="stylesheet" href="./assets/css/bootstrap.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,20 +27,10 @@
         <a href="${pageContext.request.contextPath}/ServletSalon?accion=listar"">Listar Salon</a>
         <br>
         <a href="${pageContext.request.contextPath}/ServletAlumno?accion=listar">Listar Alumnos</a>
-        
-        
-        
+
+
+
         <script src="./assets/js/jquery-3.6.0.js"></script>
         <script src="./assets/js/bootstrap.bundle.js"></script>
-=======
-        <title>Trabajo Grupal- Inicio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- boostrap CSS -->
-        <link rel="stylesheet" href="./assets/css/bootstrap.css">
-    </head>
-    <body>
-       <h1>Alumnos:</h1>
-        <a href="${pageContext.request.contextPath}/ServletAlumno?accion=listar">Listar Alumnos</a>
->>>>>>> cc3ac25e090acec462cbb0fc14283259921bb458
     </body>
 </html>
