@@ -40,7 +40,7 @@ public class CursoDaoImpl implements ICursoDao{
 
             while (rs.next()) {
                 int cursoId = rs.getInt("id_curso");
-                String ciclo = rs.getString("ciclo");
+                int ciclo = rs.getInt("ciclo");
                 int cupoMaximo = rs.getInt("cupo_maximo");
                 int cupoMinimo = rs.getInt("cupo_minimo");
                 String descripcion = rs.getString("descripcion");
@@ -49,7 +49,6 @@ public class CursoDaoImpl implements ICursoDao{
                 int instructorId = rs.getInt("id_instructor");
                 int salonId = rs.getInt("id_salon");
                 
-               
                 curso = new Curso(cursoId, cupoMaximo, cupoMinimo, descripcion, codigoCarreera, horarioId, instructorId, salonId);
                 listaCurso.add(curso);
 
@@ -67,17 +66,17 @@ public class CursoDaoImpl implements ICursoDao{
 
     @Override
     public Curso encontrar(Curso curso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public int insertar(Curso curso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public int actualuzar(Curso curso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
