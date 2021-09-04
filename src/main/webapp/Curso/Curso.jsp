@@ -45,10 +45,10 @@
                                     <th>Cupo Minimo</th>
                                     <th>Descripcion</th>
                                     <th>Codigo de Carrera</th>
-                                    <th>Horario</th>
-                                    <th>Instructor</th>
-                                    <th>Salon</th>
-                                    <th></th>
+                                    <th>instructor</th>
+                                    <th>salon</th>
+                                    <th>horario</th>
+                                    <th> </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -60,10 +60,9 @@
                                         <td>${curso.cupoMinimo}</td>
                                         <td>${curso.descripcion}</td>
                                         <td>${curso.codigoCarrera}</td>
-                                        <td>${curso.idhoraio}</td>
                                         <td>${curso.idInstructor}</td>
                                         <td>${curso.idSalon}</td>
-
+                                        <td>${curso.idHorario}</td>
                                         <td> 
                                             <a href="${pageContext.request.contextPath}/ServletCurso?accion=eliminar&idCurso=${curso.idCurso}">eliminar</a>
                                         </td>
