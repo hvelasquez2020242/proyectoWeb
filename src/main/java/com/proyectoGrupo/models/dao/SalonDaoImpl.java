@@ -9,8 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.proyectoGrupo.controllers.ServletSalon;
+import com.proyectoGrupo.controller.ServletSalon;
 /**
  * --add-modules javafx.controls,javafx.fxml
  *
@@ -80,7 +79,7 @@ public class SalonDaoImpl implements ISalonDao {
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_DELETE);
-            pstmt.setInt(1, salon.getIdSalon());
+            pstmt.setInt(1, this.salon.getIdSalon());
             System.out.println(pstmt.toString());
             rows = pstmt.executeUpdate();
         } catch (Exception e) {

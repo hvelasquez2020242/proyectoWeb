@@ -60,7 +60,7 @@
                                         <td>${salon.descripcion}</td>
                                         <td>${salon.capacidad}</td>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/ServletSalon?accion=eliminar&idSalon=${salon.idSalon}" class="link-info">Eliminar</a>
+                                            <a href="${pageContext.request.contextPath}/ServletSalon?accion=eliminar&idsalon=${salon.idSalon}" class="link-info">Eliminar</a>
 
                                         </td> 
                                     </tr>

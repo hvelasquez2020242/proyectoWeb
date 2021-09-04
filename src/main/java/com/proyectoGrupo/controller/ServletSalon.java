@@ -1,4 +1,4 @@
-package com.proyectoGrupo.controllers;
+package com.proyectoGrupo.controller;
 
 import com.proyectoGrupo.db.Conexion;
 import javax.servlet.http.HttpServlet;

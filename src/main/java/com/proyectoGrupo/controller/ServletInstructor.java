@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.proyectoGrupo.controllers;
+package com.proyectoGrupo.controller;
 
 import java.io.IOException;
 import java.util.List;

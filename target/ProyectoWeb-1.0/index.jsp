@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 01-sep-2021, 11:38:24
-    Author     : Hugo Daniel Velasquez Patzan
+    Author     : Denil José Parada Cabrera
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

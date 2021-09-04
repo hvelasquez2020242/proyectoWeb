@@ -64,15 +64,7 @@
 
                             </table>
                         </div>
-                        <div class="col-3">
-                            <div class="card-body">
-                                <h3>Numero de estudiantes</h3>
-                                <h4 class="display-4"></h4>
-                                <div class="card-body">
-                                    <h4></h4>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </section>
