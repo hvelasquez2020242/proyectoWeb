@@ -58,10 +58,12 @@ public class ServletAsignacionAlumno extends HttpServlet{
         response.sendRedirect("aignacionAlumno/listarAsignacionAlumno.jsp");
     }
     private void eliminarAsignacionAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        int idAsignacion = Integer.parseInt(request.getParameter("asignacion_id"));
+        int idAsignacion = Integer.parseInt(request.getParameter("idAsignacion"));
         
         AsignacionAlumno asignacionalumno = new AsignacionAlumno(idAsignacion);
+        
         int registrosEliminados = new AsignacionAlumnoDaoImpl().eliminar(asignacionalumno);
+        System.out.println("cantidad de registros eliminados: " + registrosEliminados);
         listarAsignacionAlumno(request, response);
     }
     

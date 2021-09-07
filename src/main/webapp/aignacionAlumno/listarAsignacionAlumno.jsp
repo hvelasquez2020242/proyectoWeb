@@ -61,7 +61,7 @@
                                         <td>${asigancionAlumno.carne}</td>
                                         <td>${asigancionAlumno.idCurso}</td>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/ServletAsignacionAlumno?accion=eliminar&asignacion_id=${asignacionAlumno.idAsignacion}" class="link-info">Eliminar</a>
+                                            <a href="${pageContext.request.contextPath}/ServletAsignacionAlumno?accion=eliminar&idAsignacion=${asigancionAlumno.idAsignacion}" class="link-info">Eliminar</a>
 
                                         </td> 
                                     </tr>
