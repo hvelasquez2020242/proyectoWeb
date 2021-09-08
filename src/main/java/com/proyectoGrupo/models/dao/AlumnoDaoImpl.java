@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class AlumnoDaoImpl implements IAlumnoDao {
     private static final String SQL__SELECT = "SELECT carne, apellidos, nombres, email FROM alumno";
-    private static final String SQL_DELETE = "DELETE FROM alumno WHERE carne = ? ";
+    private static final String SQL_DELETE = "DELETE FROM alumno WHERE carne = ?;";
     
         Connection conn = null;
         PreparedStatement  pstmt = null;

@@ -1,60 +1,47 @@
-* { 
-    margin: 1px;
-    padding: 0px;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-header {
+#kinal-header{
     background-color: #23376d;
-    color:white;
+    color: #ffffff;
     padding: 15px;
-    text-align:center;
+    text-align: center;
 }
 
-footer {
-    background-color: #23376d;
-    color:white;
+#control-footer{
+    background-color: #38AAC2;
+    color: #ffffff;
+    padding: 10px;
     text-align: center;
-    padding: 5px;
     position: fixed;
-
     bottom: 0px;
     width: 100%;
+    font-size: 20px;
 }
-
-a {
-    text-decoration: none;
+nav ul li a {
+    text-decoration: none; 
     font-size: 18px;
     color: #7d0a42;
 }
 
-footer a {color: white;}
+#contenido{
+    padding: 20px;
 
-#menu {
-    background-color: #eee;
+}
+.descripcion{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px;
+    padding-left: 150px;
+    padding-right: 150px;
 }
 
-#menu ul li {
+#kinal-img-principal{
     display: block;
-    float: left;
-    border: 2px solid #23376d;
-}
-
-#menu ul li{
-    display: block;
-    padding-left: 15px;
-    color: #444;
-}
-
-
-
-.clearfix{
-    float: none;
-    clear: both;
-}
-
-#imagenprincipal{
-    display:block;
     margin-left: auto;
     margin-right: auto;
-    width: auto;
+    width: 50%;
 }
