@@ -5,8 +5,9 @@
  */
 
 package com.proyectoGrupo.models.domain;
-import java.sql.Date;
-import java.sql.Time;
+
+
+import java.sql.Timestamp;
 /**
  *
  * @author Hugo Daniel Velasquez Patzan
@@ -15,37 +16,45 @@ import java.sql.Time;
  * @time 15:58:08
  */
 public class AsignacionAlumno {
-    private String idAsignacion;
+    private int idAsignacion;
+    private Timestamp fechaAsignacion;
     private String carne; 
-    private int idCurso; 
-    private Date fechaAsignacion;
+    private int idCurso;
 
     public AsignacionAlumno() {
     }
 
-    public AsignacionAlumno(String idAsignacion) {
+    public AsignacionAlumno(int idAsignacion) {
         this.idAsignacion = idAsignacion;
     }
 
-    public AsignacionAlumno(String carne, int idCurso, Date fechaAsignacion) {
+    public AsignacionAlumno(Timestamp fechaAsignacion, String carne, int idCurso) {
+        this.fechaAsignacion = fechaAsignacion;
         this.carne = carne;
         this.idCurso = idCurso;
-        this.fechaAsignacion = fechaAsignacion;
     }
 
-    public AsignacionAlumno(String idAsignacion, String carne, int idCurso, Date fechaAsignacion) {
+    public AsignacionAlumno(int idAsignacion, Timestamp fechaAsignacion, String carne, int idCurso) {
         this.idAsignacion = idAsignacion;
+        this.fechaAsignacion = fechaAsignacion;
         this.carne = carne;
         this.idCurso = idCurso;
-        this.fechaAsignacion = fechaAsignacion;
     }
 
-    public String getIdAsignacion() {
+    public int getIdAsignacion() {
         return idAsignacion;
     }
 
-    public void setIdAsignacion(String idAsignacion) {
+    public void setIdAsignacion(int idAsignacion) {
         this.idAsignacion = idAsignacion;
+    }
+
+    public Timestamp getFechaAsignacion() {
+        return fechaAsignacion;
+    }
+
+    public void setFechaAsignacion(Timestamp fechaAsignacion) {
+        this.fechaAsignacion = fechaAsignacion;
     }
 
     public String getCarne() {
@@ -64,21 +73,12 @@ public class AsignacionAlumno {
         this.idCurso = idCurso;
     }
 
-    public Date getFechaAsignacion() {
-        return fechaAsignacion;
-    }
-
-    public void setFechaAsignacion(Date fechaAsignacion) {
-        this.fechaAsignacion = fechaAsignacion;
-    }
-
     @Override
     public String toString() {
-        return "AsignacionAlumno{" + "idAsignacion=" + idAsignacion + ", carne=" + carne + ", idCurso=" + idCurso + ", fechaAsignacion=" + fechaAsignacion + '}';
+        return "AsignacionAlumno{" + "idAsignacion=" + idAsignacion + ", fechaAsignacion=" + fechaAsignacion + ", carne=" + carne + ", idCurso=" + idCurso + '}';
     }
 
     
     
-    
-    
-}
+        
+    }
