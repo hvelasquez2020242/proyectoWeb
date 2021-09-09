@@ -76,16 +76,24 @@ CREATE TABLE IF NOT EXISTS Curso (
   PRIMARY KEY (curso_id),
   CONSTRAINT fk_Curso_Horario
     FOREIGN KEY (horario_id)
-    REFERENCES Horario (horario_id),
+    REFERENCES Horario (horario_id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
   CONSTRAINT fk_Curso_Salon
     FOREIGN KEY (salon_id)
-    REFERENCES Salon (salon_id),
+    REFERENCES Salon (salon_id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
   CONSTRAINT fk_Curso_Carrera_tecnica
     FOREIGN KEY (codigo_carrera)
-    REFERENCES Carrera_tecnica (codigo_carrera),
+    REFERENCES Carrera_tecnica (codigo_carrera)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
   CONSTRAINT fk_Curso_instructor
     FOREIGN KEY (instructor_id)
-    REFERENCES instructor (instructor_id))
+    REFERENCES instructor (instructor_id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE)
 ;
 
 
@@ -100,8 +108,12 @@ CREATE TABLE IF NOT EXISTS Asignacion_alumno (
   PRIMARY KEY (asignacion_id),
   CONSTRAINT fk_Asignacion_alumno_alumno
     FOREIGN KEY (carne)
-    REFERENCES alumno (carne),
+    REFERENCES alumno (carne)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
   CONSTRAINT fk_Asignacion_alumno_Curso
     FOREIGN KEY (curso_id)
-    REFERENCES Curso (curso_id))
+    REFERENCES Curso (curso_id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE)
 ;
