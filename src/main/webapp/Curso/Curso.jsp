@@ -14,8 +14,9 @@
         <meta name="viewport" content = "width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../assets/css/style.css">
         <link rel="stylesheet" href="../assets/css/bootstrap.css">
+        <script src="https://kit.fontawesome.com/f90d3bf50d.js"></script>
 
-
+        
         <title>Lisitado Cursos</title>
     </head>
     <body>
@@ -37,37 +38,60 @@
             <div class="container">
                 <div class="row">
                     <div class="col-9">
-                        <table class="table table-striped">
+                        <table class="table table-striped  ">
                             <thead class="table-dark">
                                 <tr>
-                                    <th>#</th>
+                                    <th> <i class="fas fa-book-open"></i> #</th>
                                     <th>Ciclo</th>
                                     <th>Cupo Maximo</th>
                                     <th>Cupo Minimo</th>
                                     <th>Descripcion</th>
                                     <th>Codigo de Carrera</th>
-                                    <th>Horario</th>
-                                    <th>Instructor</th>
-                                    <th>Salon</th>
-                                    <th></th>
+                                    <th>instructor</th>
+                                    <th>salon</th>
+                                    <th>horario</th>
+                                    <th> </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <c:forEach var="curso" items="${listadoCurso}">
                                     <tr>
-                                        <td>${curso.idCurso}</td>
+                                        <td><i class="fas fa-copy"></i> ${curso.idCurso}</td>
                                         <td>${curso.ciclo}
                                         <td>${curso.cupoMaximo}</td>
                                         <td>${curso.cupoMinimo}</td>
                                         <td>${curso.descripcion}</td>
                                         <td>${curso.codigoCarrera}</td>
-                                        <td>${curso.idhoraio}</td>
                                         <td>${curso.idInstructor}</td>
                                         <td>${curso.idSalon}</td>
-
+                                        <td>${curso.idHorario}</td>
                                         <td> 
-                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletCurso?accion=eliminar&idCurso=${curso.idCurso}">eliminar</a>
+                                            <a href="${pageContext.request.contextPath}/ServletCurso?accion=eliminar&idCurso=${curso.idCurso}" class="link-info">eliminar</a>
                                         </td>
+                                        
+                                        <td>
+                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletInstructor?accion=editar&idInstructor=${instructor.idInstructor}">
+                                                <i class="fas fa-user-edit"></i> Editar
+                                            </a>
+                                        </td> 
+                                        
+                                        <td>
+                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletSalon?accion=editar&idSalon=${salon.idSalon}">
+                                                <i class="fas fa-user-edit"></i> Editar
+                                            </a>
+                                        </td> 
+                                        
+                                        <td>
+                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletHoratio?accion=editar&idHorario=${horario.idHorario}">
+                                                <i class="fas fa-user-edit"></i> Editar
+                                            </a>
+                                        </td> 
+
+                                        <td>
+                                            <a class="btn btn-outline-danger" href="${pageContext.request.contextPath}/ServletCurso?accion=eliminar&idCurso=${curso.idCurso}">
+                                                <i class="fas fa-trash-alt"></i> Eliminar
+                                            </a>
+                                        </td> 
                                     </tr>
 
                                 </c:forEach>
@@ -78,10 +102,9 @@
                 </div>
 
         </section>
+
         
-        <jsp:include page="/WEB-INF/paginas/comunes/pie_de_pagina.jsp"/>
-
-
+        
         <script src="../assets/js/jquery-3.6.0.js"></script>
         <script src="../assets/js/bootstrap.bundle.js"></script>
     </body>

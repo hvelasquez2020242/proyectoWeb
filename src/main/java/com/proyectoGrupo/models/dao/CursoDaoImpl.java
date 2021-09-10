@@ -21,8 +21,7 @@ import java.util.List;
  */
 public class CursoDaoImpl implements ICursoDao{
     
-    private static final String SQL_SELECT = "SELECT id_curso, ciclo, cupo_maximo, cupo_minimo, descripcion,codigo_carrera, id_horario, id"
-            + "_instructor, id_salon FROM curso;";
+    private static final String SQL_SELECT = "SELECT curso_id, ciclo, cupo_maximo, cupo_minimo, descipcion, codigo_carrera, horario_id, instructor_id, salon_id FROM Curso;";
     private static final String SQL_DELETE = "DELETE FROM curso WHERE curso_id  = ?";
 
     Connection conn = null;
@@ -31,6 +30,7 @@ public class CursoDaoImpl implements ICursoDao{
     Curso curso = null;
     List<Curso> listaCurso = new ArrayList<>();
     
+    @Override
     public List<Curso> listar() {
 
         try {
@@ -39,17 +39,16 @@ public class CursoDaoImpl implements ICursoDao{
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                int cursoId = rs.getInt("id_curso");
+                int idCurso = rs.getInt("curso_id");
                 int ciclo = rs.getInt("ciclo");
                 int cupoMaximo = rs.getInt("cupo_maximo");
                 int cupoMinimo = rs.getInt("cupo_minimo");
-                String descripcion = rs.getString("descripcion");
+                String descripcion = rs.getString("descipcion");
                 String codigoCarreera = rs.getString("codigo_carrera");
-                int horarioId = rs.getInt("id_horario");
-                int instructorId = rs.getInt("id_instructor");
-                int salonId = rs.getInt("id_salon");
-                
-                curso = new Curso(cursoId, cupoMaximo, cupoMinimo, descripcion, codigoCarreera, horarioId, instructorId, salonId);
+                int idHorario = rs.getInt("horario_id");
+                int idInstructor = rs.getInt("instructor_id");
+                int idSalon = rs.getInt("salon_id");
+                curso = new Curso(idCurso, ciclo, cupoMaximo, cupoMinimo, descripcion, codigoCarreera, idHorario, idInstructor, idSalon);
                 listaCurso.add(curso);
 
             }
