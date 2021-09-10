@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../assets/css/style.css">
         <link rel="stylesheet" href="../assets/css/bootstrap.css">
 
+
         <title>Lisitado Cursos</title>
     </head>
     <body>
@@ -24,7 +25,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h1>
+                        <h1 class="text-center">
                             Control Cursos
                         </h1>
                     </div>
@@ -65,7 +66,7 @@
                                         <td>${curso.idSalon}</td>
 
                                         <td> 
-                                            <a href="${pageContext.request.contextPath}/ServletCurso?accion=eliminar&idCurso=${curso.idCurso}">eliminar</a>
+                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletCurso?accion=eliminar&idCurso=${curso.idCurso}">eliminar</a>
                                         </td>
                                     </tr>
 
@@ -77,6 +78,8 @@
                 </div>
 
         </section>
+        
+        <jsp:include page="/WEB-INF/paginas/comunes/pie_de_pagina.jsp"/>
 
 
         <script src="../assets/js/jquery-3.6.0.js"></script>
