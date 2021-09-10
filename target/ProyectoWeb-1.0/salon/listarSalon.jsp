@@ -19,7 +19,7 @@
         <title>Listado de Salones</title>
     </head>
     <body>
-        <header id="main-header" class="py-2 bg-light pt-4">
+        <header id="main-header" class="py-2 bg-primary text-white pt-4">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

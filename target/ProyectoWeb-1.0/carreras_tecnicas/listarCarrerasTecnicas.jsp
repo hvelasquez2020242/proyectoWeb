@@ -22,14 +22,9 @@
 
         <script src="https://kit.fontawesome.com/f90d3bf50d.js"></script>
 
-
-        <title>CARRERAS TÉCNICAS</title>
+        <title>Carreras Técnicas</title>
     </head>
-    <body>
-
-        <!--Cabecera (header y nav) -->
-        <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
-        <!--Cabecera (header y nav) -->
+    <body>     
 
         <header id="main-header" class="py-2 bg-primary text-white text-center">
             <div class="container">
@@ -42,6 +37,10 @@
                 </div>
             </div>
         </header> 
+        
+        <!--Cabecera (header y nav) -->
+        <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
+        <!--Cabecera (header y nav) -->
         
         <header id="main-header" class="py-2 bg-light pt-4">
             <div class="container">
