@@ -86,7 +86,7 @@
                                         <td>${salon.nombre_salon}</td>
                                         <td>${salon.descripcion}</td>
                                         <td>${salon.capacidad}</td>
-                                        
+
                                         <td>
                                             <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletEstudiante?accion=editar&idEstudiante=${estudiante.idEstudiante}">
                                                 <i class="fas fa-user-edit"></i> Editar
@@ -110,7 +110,9 @@
         </div>
     </section>
 
-
+    <!--Pie de pagina (footer) -->
+    <jsp:include page="/WEB-INF/paginas/comunes/pie-pagina.jsp"/>
+    <!--Pie de pagina (footer) -->
 
 
     <script src="../assets/js/jquery-3.6.0.js"></script>

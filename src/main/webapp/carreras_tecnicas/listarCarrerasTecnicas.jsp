@@ -119,7 +119,7 @@
         </section>
 
         <!--Pie de pagina (footer) -->
-
+        <jsp:include page="/WEB-INF/paginas/comunes/pie-pagina.jsp"/>
         <!--Pie de pagina (footer) -->
 
         <!--javaScrip-->
