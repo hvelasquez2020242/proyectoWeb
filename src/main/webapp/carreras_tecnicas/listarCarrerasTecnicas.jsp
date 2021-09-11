@@ -13,52 +13,74 @@
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
         <link rel="stylesheet" href="../assets/css/style.css">
-
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--Bostsrap-->
         <link rel="stylesheet" href="../assets/css/bootstrap.css">
         <!--Bostsrap-->
 
-        <title>CARRERAS TÉCNICAS</title>
-    </head>
-    <body>
+        <script src="https://kit.fontawesome.com/f90d3bf50d.js"></script>
 
+        <title>Carreras Técnicas</title>
+    </head>
+    <body>     
+
+        <header id="main-header" class="py-2 bg-light pt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="text-center">Carrera tecnica</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
         <!--Cabecera (header y nav) -->
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
         <!--Cabecera (header y nav) -->
-
-        <header id="main-header" class="py-2 bg-primary text-white text-center">
+        
+        <header id="main-header" class="py-2 bg-light pt-4">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <h1>
-                            Carreras Tecnicas
+                            <i class="fas fa-cog"> </i> Control carreras tecnicas  <i class="fas fa-cog"> </i>
                         </h1>
                     </div>
                 </div>
             </div>
-        </header> 
-
+        </header>
+        
+        <!-- Agregar Estudiantes -->
+        <section id="acciones" class="py-4 mb-4" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-3">
+                        <a class="btn btn-outline-info">
+                            <i class="fas fa-plus"></i> Agregar Carreras Técnicas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="estudiantes">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-md-9">
+                    <div class="col-xs-12 col-md-12">
 
                         <div class="card">
                             <div class="card-header">
-                                <h4>Listado de estudiantes</h4>
+                                <h4> <i class="fas fa-school"></i> Listado Carreras Técnicas <i class="fas fa-school"></i> </h4>
                             </div>
                         </div>
 
                         <!--Creando la tabla-->
                         <!--Encabezado-->
                         <table class="table table-striped">
-                            <thead class="table-dark">
+                            <thead class="table-primary">
                                 <tr>
+                                    <th> <i class="fas fa-book-open"></i> #</th>
                                     <th>Código de Carrera</th>
                                     <th>Nombre de Carrera</th>
                                     <th></th>
@@ -71,9 +93,19 @@
                                     <tr>
                                         <td>${carreraTecnica.codigoCarrera}</td>
                                         <td>${carreraTecnica.nombre}</td>
+                                        
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carrera=${carreraTecnica.codigoCarrera}">Eliminar</a>
+                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=editar&codigo_carrera=${carreraTecnica.codigoCarrera}">
+                                            <i class="fas fa-user-edit"></i> Editar
+                                            </a>
                                         </td>
+                                        
+                                        <td>
+                                            <a class="btn btn-outline-danger" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carrera=${carreraTecnica.codigoCarrera}">
+                                            <i class="fas fa-trash-alt"></i> Eliminar
+                                            </a>
+                                        </td>
+                                        
                                     </tr>
                                 </c:forEach>
                             </tbody>
@@ -84,7 +116,7 @@
         </section>
 
         <!--Pie de pagina (footer) -->
-   
+
         <!--Pie de pagina (footer) -->
 
         <!--javaScrip-->

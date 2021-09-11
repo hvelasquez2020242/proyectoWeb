@@ -11,7 +11,7 @@
 }
 
 #control-footer{
-    background-color: #38AAC2;
+    background-color: #B1F1F5;
     color: #ffffff;
     padding: 10px;
     text-align: center;
@@ -44,4 +44,17 @@ nav ul li a {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+#contenido {
+    padding: 20px;
+}
+
+.descripcion {
+    font-size:  20px;
+    font-style: bold;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px;
+    padding-left: 150px;
+    padding-right: 150px;
 }
