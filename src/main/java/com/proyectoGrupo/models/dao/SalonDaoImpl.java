@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import com.proyectoGrupo.controller.ServletSalon;
+
 /**
  * --add-modules javafx.controls,javafx.fxml
  *
@@ -22,6 +23,10 @@ public class SalonDaoImpl implements ISalonDao {
 
     private static final String SQL_SELLECT = "select salon_id, capacidad,descripcion,nombre_salon from Salon;";
     private static final String SQL_DELETE = "delete from Salon where salon_id = ?";
+    private static final String SQL_INSERT = "insert into Salon (capacidad, descripcion, nombre_salon) VALUES (?,?,?);";
+    private static final String SQL_SELLECT__STRING_BY_ID = "SELECT salon_id, capacidad, descripcion, nombre_salon FROM Salon where salon_id = ?";
+    private static final String SQL_UPDATE = "UPDATE Salon SET capacidad = ?, descripcion = ?, nombre_salon = ? WHERE salon_id = ?";
+
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
@@ -42,7 +47,7 @@ public class SalonDaoImpl implements ISalonDao {
 
                 salon = new Salon(idSalon, capacidad, descripcion, nombre_salon);
                 ListaSalon.add(salon);
-                
+
             }
         } catch (SQLException e) {
             e.printStackTrace(System.out);
@@ -60,17 +65,86 @@ public class SalonDaoImpl implements ISalonDao {
 
     @Override
     public Salon encontrar(Salon salon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_SELLECT__STRING_BY_ID);
+            pstmt.setInt(1, salon.getIdSalon());
+            pstmt.toString();
+
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                int capacidad = Integer.parseInt(rs.getString("capacidad"));
+                String descripcion = rs.getString("descripcion");
+                String nombre_salon = rs.getString("nombre_salon");
+
+                salon.setCapacidad(capacidad);
+                salon.setDescripcion(descripcion);
+                salon.setNombre_salon(nombre_salon);
+
+                ListaSalon.add(salon);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return salon;
     }
 
     @Override
     public int insertar(Salon salon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rows = 0;
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_INSERT);
+            pstmt.setInt(1, salon.getCapacidad());
+            pstmt.setString(2, salon.getDescripcion());
+            pstmt.setString(3, salon.getNombre_salon());
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+
+        }
+        return rows;
     }
 
     @Override
     public int actualizar(Salon salon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    int rows = 0;
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_UPDATE);
+            pstmt.setInt(1, salon.getCapacidad());
+            pstmt.setString(2, salon.getDescripcion());
+            pstmt.setString(3, salon.getNombre_salon());
+            pstmt.setString(3, salon.getNombre_salon());
+            pstmt.setInt(4, salon.getIdSalon());
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+
+        }
+        return rows;
     }
 
     @Override
@@ -79,7 +153,7 @@ public class SalonDaoImpl implements ISalonDao {
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_DELETE);
-            pstmt.setInt(1, this.salon.getIdSalon());
+            pstmt.setInt(1, salon.getIdSalon());
             System.out.println(pstmt.toString());
             rows = pstmt.executeUpdate();
         } catch (Exception e) {
@@ -92,5 +166,4 @@ public class SalonDaoImpl implements ISalonDao {
         return rows;
     }
 
-   
 }

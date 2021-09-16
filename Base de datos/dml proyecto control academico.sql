@@ -128,3 +128,7 @@ select * from Carrera_tecnica;
 select * from Salon;
 select * from Curso;
 select * from Asignacion_alumno;
+
+insert into Salon (capacidad, descripcion, nombre_salon) VALUES (1,"","");
+SELECT salon_id, capacidad, descripcion, nombre_salon  FROM Salon where salon_id =1; 
+UPDATE Salon SET capacidad = 2, descripcion = "2", nombre_salon ="2" WHERE salon_id = 7;
