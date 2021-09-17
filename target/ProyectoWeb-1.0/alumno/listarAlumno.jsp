@@ -5,6 +5,8 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<fmt:setLocale value="es-GT"/>
 
 <!DOCTYPE html>
 <html>
@@ -42,18 +44,70 @@
             </div>
         </header>
 
-        <section id="acciones" class="py-4 mb-4" >
+        <section id="acciones" class="py-4 mb-4">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-3">
-                        <a class="btn btn-outline-info"><i class="fas fa-plus"></i> Agregar Alumno</a>
+                        <a data-bs-toggle="modal" data-bs-target="#agregar-alumno-modal" class="btn btn-primary btn-block">
+                            <i class="fas fa-plus"></i> Agregar Alumno  
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
+        
+        
+        <!-- Modal -->
+        <div class="modal fade" id="agregar-alumno-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-danger">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar Alumno</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="POST" action="${pageContext.request.contextPath}/ServletAlumno">
+
+                        <div class="modal-body">
+
+                            <div class="mb-3">
+                                <label for="carne" class="form-label">Carne</label>
+                                <input type="carne" id="carne" name="carne" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="apellido" class="form-label">Apellido</label>
+                                <input type="text" id="apellido" name="apellido" class="form-control">
+                            </div>
 
 
-        <section id="estudiantes" class="mb-5 mt-5">
+                            <div class="mb-3">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control">
+                            </div>                            
+
+
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                            </div>
+
+
+
+                            <input type="hidden" name="accion" value="insertar">
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <section id="alumno" class="mb-5 mt-5">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-12">
@@ -83,7 +137,7 @@
                                         <td>${alumno.email}</td>
 
                                         <td>
-                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletEstudiante?accion=editar&idEstudiante=${estudiante.idEstudiante}">
+                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletAlumno?accion=editar&carne=${alumno.carne}">
                                                 <i class="fas fa-user-edit"></i> Editar
                                             </a>
                                         </td> 

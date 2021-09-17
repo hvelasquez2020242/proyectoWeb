@@ -1,7 +1,7 @@
 <%-- 
-    Document   : estudiante
-    Created on : 26/08/2021, 12:42:19 AM
-    Author     : Denil José Parada Cabrera 
+    Document   : editar-salon
+    Created on : 17-sep-2021, 7:58:23
+    Author     : Hugo Daniel Velasquez Patzan
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

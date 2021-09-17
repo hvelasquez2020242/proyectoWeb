@@ -42,19 +42,79 @@
                 </div>
             </div>
         </header>
-
-
-        <section id="acciones" class="py-4 mb-4" >
+        
+       <section id="acciones" class="py-4 mb-4">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-3">
-                        <a class="btn btn-outline-info">
+                        <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fas fa-plus"></i> Agregar curso
-                        </a>
+                        </button>
                     </div>
+
+
                 </div>
             </div>
         </section>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar instructor</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                       <form method="POST" action="${pageContext.request.contextPath}/ServletCurso">
+                            <div class="modal-body bg-dark text-dark">
+                                <div class="form-floating mb-3">
+                                    <input type="number" id="ciclo" name="ciclo" class="form-control" placeholder="Ciclo">
+                                    <label for="ciclo" class="form-label">Ciclo</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="number" id="cupo_maximo" name="cupo_maximo" class="form-control" placeholder="cupoMaximo">
+                                    <label for="cupo_maximo" class="form-label">Cupo Maximo</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="nummber" id="cupo_minimo" name="cupo_minimo" class="form-control" placeholder="Cupo Minimo ">
+                                    <label for="cupo_minimo" class="form-label">Cupo Minimo </label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" id="descipcion" name="descipcion" class="form-control" placeholder="Descipcion">
+                                    <label for="descipcion" class="form-label">Descipcion</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" id="codigo_carrera" name="codigo_carrera" class="form-control" step="any" placeholder="Codigo Carrera">
+                                    <label for="codigo_carrera" class="form-label">Codigo Carrera</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="number" id="horario_id" name="horario_id" class="form-control" placeholder="Horario">
+                                    <label for="horario_id" class="form-label">Horario</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="number" id="instructor_id" name="instructor_id" class="form-control" placeholder="Instructor">
+                                    <label for="instructor_id" class="form-label">Instructor</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="number" id="telefono" name="salon_id" class="form-control" placeholder="Salon">
+                                    <label for="salon_id" class="form-label">Salon</label>
+                                </div>
+                                <input type="hidden" name="accion" value="insertar">
+                            </div>
+                            <div class="modal-footer bg-dark">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+
+                        </form>
+                </div>
+            </div>
+        </div>
+
+
+       
+        
 
         <section id="estudiantes" class="mb-5 mt-5">
             <div class="container">

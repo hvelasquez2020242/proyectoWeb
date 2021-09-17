@@ -36,20 +36,58 @@
                 </div>
             </div>
         </header>
-
-
+        
         <section id="acciones" class="py-4 mb-4" >
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-3">
-                        <a class="btn btn-outline-info">
-                            <i class="fas fa-plus"></i> Agregar
+                        <a class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#agregar-asignacionAlumno-modal">
+                            <i class="fas fa-plus"></i> Agregar AsignacionAlumno
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Modal -->
+        <div class="modal fade" id="agregar-asignacionAlumno-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title bg-primary" id="exampleModalLabel">Agregar</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="POST" action="${pageContext.request.contextPath}/ServletAsignacionAlumno">
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="idCurso" class="form-label">idCurso</label>
+                                <input type="number" id="idCurso" name="idCurso" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="fechaAsignacion" class="form-label">fechaAsignacion</label>
+                                <input type="datetime" id="fechaAsignacion" name="fechaAsignacion" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="carne" class="form-label" >carne</label>
+                                <input type="text" id="carne" name="carne" class="form-control">
+                            </div>
+
+                            <input type="hidden" name="accion" value="insertar">
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Calcelar</button>
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                            
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+                        
+                        
         <section id="estudiantes" class="mb-5 mt-5">
             <div class="container">
                 <div class="row">
@@ -64,8 +102,8 @@
 
                         <table class="table table-striped "> 
                             <thead class="table-primary">
-                               
-                                    <tr>
+
+                                <tr>
                                     <th> <i class="fas fa-book-open"></i> #</th>
                                     <th>Fecha asignacion</th>
                                     <th>carne</th>
@@ -75,7 +113,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                   <c:forEach var="asigancionAlumno" items="${listarAsignacionAlumno}">
+                                <c:forEach var="asigancionAlumno" items="${listarAsignacionAlumno}">
                                     <tr>
                                         <td> <i class="fas fa-book-reader"></i> ${asigancionAlumno.idAsignacion}</td>
                                         <td>${asigancionAlumno.fechaAsignacion}</td>
@@ -88,15 +126,15 @@
                                             </a>
                                         </td> 
 
-                                              <td>
+                                        <td>
                                             <a class="btn btn-outline-danger" href="${pageContext.request.contextPath}/ServletAsignacionAlumno?accion=eliminar&idAsignacion=${asignacionAlumno.idAsignacion}">
-                                            <i class="fas fa-trash-alt"></i> Eliminar
+                                                <i class="fas fa-trash-alt"></i> Eliminar
                                             </a>
                                         </td>
                                     </tr>
                                 </c:forEach>
 
-                                </tbody>
+                            </tbody>
                         </table>    
                     </div>
 
@@ -113,3 +151,4 @@
     <script src="../assets/js/bootstrap.bundle.js"></script>
 </body>
 </html>  
+
