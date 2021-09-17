@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -32,17 +33,38 @@
         <jsp:include page="../WEB-INF/paginas/comunes/cabecera.jsp"/>
 
         <header id="main-header" class="py-2 bg-light pt-4">
+=======
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content = "width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap.css">
+
+        <title>Lisitado Cursos</title>
+    </head>
+    <body>
+        <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
+
+        <header id= "main-header" class="py-2 bg-info text-white">
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <h1>
+<<<<<<< HEAD
                             <i class="fas fa-cog"> </i> Control curso  <i class="fas fa-cog"> </i>
+=======
+                            Control Cursos
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
                         </h1>
                     </div>
                 </div>
             </div>
         </header>
 
+<<<<<<< HEAD
 
         <section id="acciones" class="py-4 mb-4" >
             <div class="container">
@@ -73,6 +95,16 @@
                                
                                      <tr>
                                     <th> <i class="fas fa-book-open"></i> #</th>
+=======
+        <section id="cursos">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9">
+                        <table class="table table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>#</th>
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
                                     <th>Ciclo</th>
                                     <th>Cupo Maximo</th>
                                     <th>Cupo Minimo</th>
@@ -82,11 +114,18 @@
                                     <th>salon</th>
                                     <th>horario</th>
                                     <th> </th>
+<<<<<<< HEAD
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                      <c:forEach var="curso" items="${listadoCurso}">
+=======
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach var="curso" items="${listadoCurso}">
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
                                     <tr>
                                         <td>${curso.idCurso}</td>
                                         <td>${curso.ciclo}
@@ -97,6 +136,7 @@
                                         <td>${curso.idInstructor}</td>
                                         <td>${curso.idSalon}</td>
                                         <td>${curso.idHorario}</td>
+<<<<<<< HEAD
                                          <td>
                                             <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletCurso?accion=editar&idCurso=${curso.idCurso}">
                                                 <i class="fas fa-user-edit"></i> Editar
@@ -108,10 +148,16 @@
                                             </a>
                                         </td> 
                                         
+=======
+                                        <td> 
+                                            <a href="${pageContext.request.contextPath}/ServletCurso?accion=eliminar&idCurso=${curso.idCurso}">eliminar</a>
+                                        </td>
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
                                     </tr>
 
                                 </c:forEach>
 
+<<<<<<< HEAD
                                 </tbody>
                         </table>    
                     </div>
@@ -135,3 +181,17 @@
 
 
 
+=======
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+        </section>
+
+
+        <script src="../assets/js/jquery-3.6.0.js"></script>
+        <script src="../assets/js/bootstrap.bundle.js"></script>
+    </body>
+</html>
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e

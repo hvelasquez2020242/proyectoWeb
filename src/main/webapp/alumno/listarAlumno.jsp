@@ -3,10 +3,16 @@
     Created on : 2/09/2021, 01:19:34 AM
     Author     : IVAN PC
 --%>
+<<<<<<< HEAD
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <fmt:setLocale value="es-GT"/>
+=======
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
 
 <!DOCTYPE html>
 <html>
@@ -44,6 +50,7 @@
             </div>
         </header>
 
+<<<<<<< HEAD
         <section id="acciones" class="py-4 mb-4">
             <div class="container">
                 <div class="row">
@@ -51,10 +58,18 @@
                         <a data-bs-toggle="modal" data-bs-target="#agregar-alumno-modal" class="btn btn-primary btn-block">
                             <i class="fas fa-plus"></i> Agregar Alumno  
                         </a>
+=======
+        <section id="acciones" class="py-4 mb-4" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-3">
+                        <a class="btn btn-outline-info"><i class="fas fa-plus"></i> Agregar Alumno</a>
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
                     </div>
                 </div>
             </div>
         </section>
+<<<<<<< HEAD
         
         
         <!-- Modal -->
@@ -108,6 +123,11 @@
         </div>
 
         <section id="alumno" class="mb-5 mt-5">
+=======
+
+
+        <section id="estudiantes" class="mb-5 mt-5">
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-12">
@@ -120,7 +140,11 @@
                         </div>
 
                         <table class="table table-striped  ">
+<<<<<<< HEAD
                             <thead class="table-primary">
+=======
+                            <thead class="table-dark">
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
                                 <tr>
                                     <th><i class="fas fa-book-open"></i> #</th>
                                     <th>Nombre Completo</th>
@@ -137,7 +161,11 @@
                                         <td>${alumno.email}</td>
 
                                         <td>
+<<<<<<< HEAD
                                             <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletAlumno?accion=editar&carne=${alumno.carne}">
+=======
+                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletEstudiante?accion=editar&idEstudiante=${estudiante.idEstudiante}">
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
                                                 <i class="fas fa-user-edit"></i> Editar
                                             </a>
                                         </td> 
@@ -163,4 +191,8 @@
     <script src="../assets/js/jquery-3.6.0.js"></script> 
     <script src="../assets/js/bootstrap.bundle.js"></script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e

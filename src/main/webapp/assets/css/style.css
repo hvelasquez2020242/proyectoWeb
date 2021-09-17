@@ -11,7 +11,11 @@
 }
 
 #control-footer{
+<<<<<<< HEAD
     background-color: #B1F1F5;
+=======
+    background-color: #38AAC2;
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
     color: #ffffff;
     padding: 10px;
     text-align: center;
@@ -44,6 +48,7 @@ nav ul li a {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+<<<<<<< HEAD
 }
 #contenido {
     padding: 20px;
@@ -58,3 +63,6 @@ nav ul li a {
     padding-left: 150px;
     padding-right: 150px;
 }
+=======
+}
+>>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
