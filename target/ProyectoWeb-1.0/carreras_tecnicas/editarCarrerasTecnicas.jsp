@@ -76,7 +76,7 @@
                                     <!-- -->
                                     <div class="mb-3">
                                         <label for="codigoCarrera" class="form-label">Ingrese su código</label>
-                                        <input type="text" id="codigoCarrera" name="codigoCarrera" class="form-control" value="${carreraTecnica.codigoCarrera}">
+                                        <input type="text" id="codigoCarrera" name="codigoCarrera" readonly="" class="form-control" value="${carreraTecnica.codigoCarrera}">
                                     </div>
 
                                     <div class="mb-3">
