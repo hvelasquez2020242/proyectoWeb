@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.proyectoGrupo.models.dao;
 
 import com.proyectoGrupo.db.Conexion;
@@ -23,6 +18,10 @@ public class CursoDaoImpl implements ICursoDao{
     
     private static final String SQL_SELECT = "SELECT curso_id, ciclo, cupo_maximo, cupo_minimo, descipcion, codigo_carrera, horario_id, instructor_id, salon_id FROM Curso;";
     private static final String SQL_DELETE = "DELETE FROM curso WHERE curso_id  = ?";
+    private static final String SQL_INSERT = "INSERT INTO curso(curso_id, ciclo, cupo_maximo, cupo_minimo, descipcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String SQL_UPDATE = "UPDATE curso SET ciclo = ?, cupo_maximo = ?, cupo_minimo = ?, descripcion = ?, codigo_carrera = ?, horario_id = ?, instructor = ?, salon_id = ? WHERE curso_id = ?";
+    private static final String SQL_SELECT_BY_ID = "SELECT curso_id, ciclo, cupo_maximo, cupo_minimo, descipcion, codigo_carrera, horario_id, instructor_id, salon_id FROM Curso; WHERE curso_id = ?";
+
 
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -32,7 +31,6 @@ public class CursoDaoImpl implements ICursoDao{
     
     @Override
     public List<Curso> listar() {
-
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_SELECT);
@@ -65,23 +63,111 @@ public class CursoDaoImpl implements ICursoDao{
 
     @Override
     public Curso encontrar(Curso curso) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_SELECT_BY_ID);
+            pstmt.setInt(1, curso.getIdCurso());
+            System.out.println(pstmt.toString());
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                int idCurso = rs.getInt("curso_id");
+                int ciclo = rs.getInt("ciclo");
+                int cupoMaximo = rs.getInt("cupo_maximo");
+                int cupoMinimo = rs.getInt("cupo_minimo");
+                String descripcion = rs.getString("descipcion");
+                String codigoCarreera = rs.getString("codigo_carrera");
+                int idHorario = rs.getInt("horario_id");
+                int idInstructor = rs.getInt("instructor_id");
+                int idSalon = rs.getInt("salon_id");
+
+                /*utilizar metodos Set*/
+                curso.setIdCurso(idCurso);
+                curso.setCiclo(ciclo);
+                curso.setCupoMaximo(cupoMaximo);
+                curso.setCupoMinimo(cupoMinimo);
+                curso.setDescripcion(descripcion);
+                curso.setCodigoCarrera(codigoCarreera);
+                curso.setIdHorario(idHorario);
+                curso.setIdInstructor(idInstructor);
+                curso.setIdSalon(idSalon);
+                listaCurso.add(curso);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return curso;
     }
 
     @Override
     public int insertar(Curso curso) {
-        throw new UnsupportedOperationException("Not supported yet.");
+      int rows = 0;
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_INSERT);
+            pstmt.setInt(1, curso.getCiclo());
+            pstmt.setInt(2, curso.getCupoMaximo());
+            pstmt.setInt(3, curso.getCupoMinimo());
+            pstmt.setString(4, curso.getDescripcion());
+            pstmt.setString(5, curso.getCodigoCarrera());
+            pstmt.setInt(3, curso.getIdHorario());
+            pstmt.setInt(3, curso.getIdInstructor());
+            pstmt.setInt(3, curso.getIdSalon());
+
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return rows;   
     }
+    
 
     @Override
     public int actualuzar(Curso curso) {
-        throw new UnsupportedOperationException("Not supported yet.");
+      int rows = 0;
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_UPDATE);
+            pstmt.setInt(1, curso.getCiclo());
+            pstmt.setInt(2, curso.getCupoMaximo());
+            pstmt.setInt(3, curso.getCupoMinimo());
+            pstmt.setString(4, curso.getDescripcion());
+            pstmt.setString(5, curso.getCodigoCarrera());
+            pstmt.setInt(6, curso.getIdHorario());
+            pstmt.setInt(6, curso.getIdInstructor());
+            pstmt.setInt(6, curso.getIdSalon());
+            
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return rows;    
     }
+    
 
     @Override
     public int eliminar(Curso curso) {
-        int rows = 0;
-
+      int rows = 0;
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_DELETE);
