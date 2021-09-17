@@ -6,6 +6,8 @@
 
 package com.proyectoGrupo.models.domain;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Hugo Daniel Velasquez Patzan
@@ -13,7 +15,10 @@ package com.proyectoGrupo.models.domain;
  * @date 30-ago-2021
  * @time 15:13:56
  */
-public class CarreraTecnica {
+public class CarreraTecnica implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
+    
     private String codigoCarrera;
     private String nombre;
 
