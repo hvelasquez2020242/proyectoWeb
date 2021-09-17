@@ -1,15 +1,8 @@
 <%-- 
     Document   : index
-<<<<<<< HEAD
     Created on : 03-sep-2021, 15:00:10
     Author     : Hugo Daniel Velasquez Patzan
 --%>
-=======
-    Created on : 01-sep-2021, 11:38:24
-    Author     : Denil José Parada Cabrera
---%>
-
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
 <%@page contentType="text/html"  pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,16 +15,12 @@
     </head>
     <body>
         <h1 class="text-center">Control Academico</h1>
-<<<<<<< HEAD
         
-=======
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
 
         <jsp:include page="WEB-INF/paginas/comunes/cabecera.jsp"/>
         <script src="./assets/js/jquery-3.6.0.js"></script>
         <script src="./assets/js/bootstrap.bundle.js"></script>
         <jsp:include page="WEB-INF/paginas/comunes/pie-pagina.jsp"/>
-<<<<<<< HEAD
         <main>
 
             <section id = "contenido">
@@ -52,8 +41,3 @@
     </body>
     
 </html>
-=======
-    </body>
-    
-</html>
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e

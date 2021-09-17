@@ -10,7 +10,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<<<<<<< HEAD
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
          Bootstrap CSS --> 
@@ -33,28 +32,15 @@
         <jsp:include page="../WEB-INF/paginas/comunes/cabecera.jsp"/>
 
         <header id="main-header" class="py-2 bg-light pt-4">
-=======
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="../assets/css/bootstrap.css">  
-        <title>Listado de estudiantes</title>
-    </head>
-    <body>
-        <header id="main-header" class="py-2 bg-info text-white">
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <h1>
-<<<<<<< HEAD
                             <i class="fas fa-cog"> </i> Control instructor  <i class="fas fa-cog"> </i>
-=======
-                            Control instructor
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
                         </h1>
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
         </header>
 
 
@@ -85,24 +71,12 @@
                         <table class="table table-striped "> 
                             <thead class="table-primary">
                                
-=======
-            <jsp:include page="../WEB-INF/paginas/comunes/cabecera.jsp"/>
-            <section id="estudiantes">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-9">
-                            <table class="table table-striped">
-
-                                <thead class="table-dark">
-
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
                                     <tr>
                                         <th>#</th>
                                         <th>Nombre completo</th>
                                         <th>Direccion</th>
                                         <th>Telefono</th>         
                                         <th></th>
-<<<<<<< HEAD
                                         <th></th>
                                     </tr>
                             </thead>
@@ -123,30 +97,11 @@
                                                 <i class="fas fa-trash-alt"></i> Eliminar
                                             </a>
                                         </td> 
-=======
-                                    </tr>
-
-
-
-                                </thead>
-                                <tbody>
-                                    <c:forEach var="instructor" items="${listaInstructor}">
-                                        <tr>
-                                            <td>${instructor.idInstructor}</td>
-                                            <td>${instructor.nombres} ${instructor.apellidos}</td>
-                                            <td>${instructor.direccion}</td>
-                                            <td>${instructor.telefono}</td>
-                                            <td>
-                                                <a href="${pageContext.request.contextPath}/ServletInstructor?accion=eliminar&idInstructor=${instructor.idInstructor}">Eliminar</a>
-
-                                            </td>
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
 
                                         </tr>
                                     </c:forEach>
 
                                 </tbody>
-<<<<<<< HEAD
                         </table>    
                     </div>
 
@@ -163,19 +118,3 @@
     <script src="../assets/js/bootstrap.bundle.js"></script>
 </body>
 </html>  
-=======
-
-                            </table>
-                        </div>
-                       
-                    </div>
-                </div>
-            </section>
-        </header>
-
-        <script src="../assets/js/jquery-3.6.0.js"></script>
-        <script src="../assets/js/bootstrap.bundle.js"></script>
-
-    </body>
-</html>
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e

@@ -16,16 +16,11 @@ import com.proyectoGrupo.models.dao.AlumnoDaoImpl;
 import com.proyectoGrupo.models.domain.Alumno;
 import java.io.IOException;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
 /**
  *
  * @author IVAN PC
  */
 @WebServlet("/ServletAlumno")
-<<<<<<< HEAD
 public class ServletAlumno extends HttpServlet {
 
     @Override
@@ -48,22 +43,6 @@ public class ServletAlumno extends HttpServlet {
                     break;
                 case "editar":
                     editarAlumno(request, response);
-=======
-public class ServletAlumno extends HttpServlet{
-    
-   @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        
-        String accion = request.getParameter("accion");
-        
-        if(accion != null){
-            switch(accion){
-                case "listar":
-                    listarAlumno(request,response);
-                    break;
-                case "editar":
-                    //...
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
                     break;
                 case "eliminar":
                     eliminarAlumno(request, response);
@@ -71,7 +50,6 @@ public class ServletAlumno extends HttpServlet{
             }
         }
     }
-<<<<<<< HEAD
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -147,32 +125,4 @@ public class ServletAlumno extends HttpServlet{
         listarAlumno(request, response);
 
     }
-=======
-    
-     private void eliminarAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        String carne = request.getParameter("carne");
-        Alumno alumno = new Alumno(carne);
-        int registrosEliminados = new AlumnoDaoImpl().eliminar(alumno);
-        
-        
-        
-        
-        System.out.println();
-        listarAlumno(request, response);
-        
-    }
-    
-    private void listarAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        List<Alumno> listaAlumnos = new AlumnoDaoImpl().listar();
-        
-        HttpSession sesion= request.getSession();
-        sesion.setAttribute("listadoAlumno", listaAlumnos);
-        
-        response.sendRedirect("alumno/listarAlumno.jsp");
-        
-    }
-    
-   
-    
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
 }

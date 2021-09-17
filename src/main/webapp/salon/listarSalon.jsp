@@ -56,10 +56,6 @@
             </div>
         </section>
 
-<<<<<<< HEAD
-=======
-        
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
         <section id="estudiantes" class="mb-5 mt-5">
             <div class="container">
                 <div class="row">
@@ -120,8 +116,4 @@
     <script src="../assets/js/jquery-3.6.0.js"></script>
     <script src="../assets/js/bootstrap.bundle.js"></script>
 </body>
-<<<<<<< HEAD
 </html>  
-=======
-</html>  
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e

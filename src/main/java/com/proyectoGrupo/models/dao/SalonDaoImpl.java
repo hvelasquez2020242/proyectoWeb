@@ -79,11 +79,7 @@ public class SalonDaoImpl implements ISalonDao {
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_DELETE);
-<<<<<<< HEAD
             pstmt.setInt(1, this.salon.getIdSalon());
-=======
-            pstmt.setInt(1, salon.getIdSalon());
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
             System.out.println(pstmt.toString());
             rows = pstmt.executeUpdate();
         } catch (Exception e) {

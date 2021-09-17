@@ -17,17 +17,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
 /**
  *
  * @author IVAN PC
  */
 public class AlumnoDaoImpl implements IAlumnoDao {
-<<<<<<< HEAD
 
     private static final String SQL__SELECT = "SELECT carne, apellidos, nombres, email FROM alumno";
     private static final String SQL_DELETE = "DELETE FROM alumno WHERE carne = ?;";
@@ -49,30 +43,10 @@ public class AlumnoDaoImpl implements IAlumnoDao {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-=======
-    private static final String SQL__SELECT = "SELECT carne, apellidos, nombres, email FROM alumno";
-    private static final String SQL_DELETE = "DELETE FROM alumno WHERE carne = ?;";
-    
-        Connection conn = null;
-        PreparedStatement  pstmt = null;
-        ResultSet rs = null;
-        Alumno alumno = null;
-        List<Alumno> listaAlumnos = new ArrayList<>();
-
-    @Override
-    public List<Alumno> listar() {
-        try{
-            conn = Conexion.getConnection();
-            pstmt = conn.prepareStatement(SQL__SELECT);
-            rs = pstmt.executeQuery();
-            
-            while(rs.next()){
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
                 String carne = rs.getString("carne");
                 String apellidos = rs.getString("apellidos");
                 String nombres = rs.getString("nombres");
                 String email = rs.getString("email");
-<<<<<<< HEAD
 
                 alumno = new Alumno(carne, apellidos, nombres, email);
                 listaAlumnos.add(alumno);                                
@@ -83,19 +57,6 @@ public class AlumnoDaoImpl implements IAlumnoDao {
         } catch (Exception e) {
             e.printStackTrace(System.out);
         } finally {
-=======
-                
-                alumno = new Alumno(carne,apellidos,nombres,email);
-                listaAlumnos.add(alumno);
-            
-                
-            }
-        }catch(SQLException e){
-            e.printStackTrace(System.out);
-        }catch(Exception e){
-            e.printStackTrace(System.out);
-        }finally{
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
             Conexion.close(rs);
             Conexion.close(pstmt);
             Conexion.close(conn);
@@ -105,7 +66,6 @@ public class AlumnoDaoImpl implements IAlumnoDao {
 
     @Override
     public Alumno encontrar(Alumno alumno) {
-<<<<<<< HEAD
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_SELECT_BY_ID);
@@ -134,14 +94,10 @@ public class AlumnoDaoImpl implements IAlumnoDao {
             Conexion.close(conn);
         }
         return alumno;
-=======
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
     }
 
     @Override
     public int insertar(Alumno alumno) {
-<<<<<<< HEAD
         int rows = 0;
         try {
             conn = Conexion.getConnection();
@@ -190,14 +146,6 @@ public class AlumnoDaoImpl implements IAlumnoDao {
             Conexion.close(conn);
         }
         return rows;
-=======
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int actualizar(Alumno alumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
     }
 
     @Override
@@ -206,19 +154,11 @@ public class AlumnoDaoImpl implements IAlumnoDao {
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_DELETE);
-<<<<<<< HEAD
 
             pstmt.setString(1, alumno.getCarne());
 
             System.out.println(pstmt.toString());
 
-=======
-            
-            pstmt.setString(1, alumno.getCarne());
-            
-            System.out.println(pstmt.toString());
-            
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
             rows = pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace(System.out);
@@ -228,9 +168,4 @@ public class AlumnoDaoImpl implements IAlumnoDao {
         }
         return rows;
     }
-<<<<<<< HEAD
-=======
-    
-    
->>>>>>> 9eed5baec61fb3f49bc713ce52a862bde80a984e
 }
