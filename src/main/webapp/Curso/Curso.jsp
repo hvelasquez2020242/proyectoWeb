@@ -6,6 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<fmt:setLocale value="es_GT"/>
+
 <!DOCTYPE html>
 
 <html>
@@ -20,7 +22,7 @@
         <title>Lisitado Cursos</title>
     </head>
     <body>
-       <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
+       <jsp:include page="../WEB-INF/paginas/comunes/cabecera.jsp"/>
        
         <header id= "main-header" class="py-2 bg-info text-white">
             <div class="container">

@@ -10,6 +10,8 @@ import com.proyectoGrupo.models.domain.Curso;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,6 +26,38 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet("/ServletCurso")
 public class ServletCurso extends HttpServlet {
+    
+    @Override
+     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+        System.out.println("\nDoPost");
+        String accion = request.getParameter("accion");
+
+        System.out.println("Accion:" + accion);
+
+        if (accion != null) {
+            switch (accion) {
+                case "insertar": {
+                    try {
+                        insertarCurso(request, response);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(ServletCurso.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                break;
+                case "actualizar":
+                {
+                    try {
+                        actualuzarCurso(request, response);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(ServletCurso.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                    break;
+            }
+        }
+
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -84,5 +118,29 @@ public class ServletCurso extends HttpServlet {
         request.setAttribute("curso", curso);
         request.getRequestDispatcher("curso/editar_curso.jsp").forward(request, response);
 
+    }
+    
+    private void actualuzarCurso(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
+        //Recuperar Id Estudiante Editado
+        int idCurso = Integer.parseInt(request.getParameter("curso_id"));
+                
+        /*Actualizar Datos*/
+        String curso_id = request.getParameter("curso_id");
+        String ciclo = request.getParameter("ciclo");
+        String cupoMaximo = request.getParameter("cupo_maximo");
+        String cupoMinimo = request.getParameter("cupo_minimo");
+        String descripcion = request.getParameter("descipcion");
+        String codigoCarreera = request.getParameter("codigo_carrera");
+        String idHorario = request.getParameter("horario_id");
+        String idInstructor = request.getParameter("instructor_id");
+        String idSalon = request.getParameter("salon_id");
+        
+        Curso curso2 = new Curso(idCurso, idCurso, idCurso, idCurso, descripcion, codigoCarreera, idCurso, idCurso, idCurso);
+        System.out.println(curso2);
+        
+        /*Crear Objeto Estudiante*/
+        int registroActualizado = new CursoDaoImpl().actualuzar(curso2);
+
+        listarCurso(request, response);
     }
 }
