@@ -139,19 +139,19 @@
                                         </td>
 
                                         <td>
-                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletInstructor?accion=editar&idInstructor=${instructor.idInstructor}">
+                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletInstructor?accion=editar&idInstructor=${instructor.nombres}">
                                                 <i class="fas fa-user-edit"></i> Editar
                                             </a>
                                         </td> 
 
                                         <td>
-                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletSalon?accion=editar&idSalon=${salon.idSalon}">
+                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletSalon?accion=editar&idSalon=${salon.nombre_salon}">
                                                 <i class="fas fa-user-edit"></i> Editar
                                             </a>
                                         </td> 
 
                                         <td>
-                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletHoratio?accion=editar&idHorario=${horario.idHorario}">
+                                            <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/ServletHoratio?accion=editar&idHorario=${horario.horario_inicio}">
                                                 <i class="fas fa-user-edit"></i> Editar
                                             </a>
                                         </td> 
